@@ -3,6 +3,7 @@ class sample8 {
     int numbers[] = new int[20];
     String oddNumbers = "";
     String evenNumbers = "";
+    boolean flg = true;
     
     for (int i = 0; i < numbers.length; i++) {
       numbers[i] = i * 5;
@@ -11,12 +12,30 @@ class sample8 {
       int mod = x % 2;
       
       if (i <= 10 && mod == 1) {
-        oddNumbers = addToNumbers(oddNumbers, x);
+        if (flg) {
+          oddNumbers += x;
+          flg = false;
+        } else {
+          oddNumbers += "," + x;
+        }
       }
       
       if (i > 10 && mod == 0) {
-        evenNumbers = addToNumbers(evenNumbers, x);
+        if (flg) {
+          evenNumbers += x;
+          flg = false;
+        } else {
+          evenNumbers += "," + x;
+        }
       }
+      
+      // if (i <= 10 && mod == 1) {
+      //   oddNumbers = addToNumbers(oddNumbers, x);
+      // }
+      
+      // if (i > 10 && mod == 0) {
+      //   evenNumbers = addToNumbers(evenNumbers, x);
+      // }
         
     }
     
@@ -24,10 +43,18 @@ class sample8 {
     System.out.println("偶数：" + evenNumbers);
   }
   
-  public static String addToNumbers(String numbers, int x) {
-    if (!numbers.isEmpty()) {
-          numbers += ",";
-        }
-        return numbers + x;
-  }
+  // public static String addToNumbers(String numbers, int x) {
+  //   if (!numbers.isEmpty()) {
+  //         numbers += ",";
+  //       }
+  //       return numbers + x;
+  // }
+  
+  // public static String addToNumbers(String numbers, int x) {
+  //   if (flg) {
+  //         oddNumbers += x;
+  //         flg = false;
+  //       } else {
+  //         oddNumbers += "," + x;
+  //       }
 }
