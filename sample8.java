@@ -3,7 +3,8 @@ class sample8 {
     int numbers[] = new int[20];
     String oddNumbers = "";
     String evenNumbers = "";
-    boolean flg = true;
+    boolean oddflg = true;
+    boolean evenflg = true;
     
     for (int i = 0; i < numbers.length; i++) {
       numbers[i] = i * 5;
@@ -12,21 +13,13 @@ class sample8 {
       int mod = x % 2;
       
       if (i <= 10 && mod == 1) {
-        if (flg) {
-          oddNumbers += x;
-          flg = false;
-        } else {
-          oddNumbers += "," + x;
-        }
+        oddNumbers = addToNumbers(oddNumbers, x, oddflg);
+        oddflg = false;
       }
       
       if (i > 10 && mod == 0) {
-        if (flg) {
-          evenNumbers += x;
-          flg = false;
-        } else {
-          evenNumbers += "," + x;
-        }
+        evenNumbers = addToNumbers(evenNumbers, x, evenflg);
+        evenflg = false;
       }
       
       // if (i <= 10 && mod == 1) {
@@ -50,11 +43,12 @@ class sample8 {
   //       return numbers + x;
   // }
   
-  // public static String addToNumbers(String numbers, int x) {
-  //   if (flg) {
-  //         oddNumbers += x;
-  //         flg = false;
-  //       } else {
-  //         oddNumbers += "," + x;
-  //       }
+  public static String addToNumbers(String numbers, int x, boolean flg) {
+    if (flg) {
+      numbers += x;
+    } else {
+      numbers += "," + x;
+    }
+    return numbers;
+  }
 }
