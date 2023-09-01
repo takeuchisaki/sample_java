@@ -22,26 +22,12 @@ class sample8 {
         evenflg = false;
       }
       
-      // if (i <= 10 && mod == 1) {
-      //   oddNumbers = addToNumbers(oddNumbers, x);
-      // }
-      
-      // if (i > 10 && mod == 0) {
-      //   evenNumbers = addToNumbers(evenNumbers, x);
-      // }
-        
     }
     
     System.out.println("奇数：" + oddNumbers);
     System.out.println("偶数：" + evenNumbers);
   }
   
-  // public static String addToNumbers(String numbers, int x) {
-  //   if (!numbers.isEmpty()) {
-  //         numbers += ",";
-  //       }
-  //       return numbers + x;
-  // }
   
   public static String addToNumbers(String numbers, int x, boolean flg) {
     if (flg) {
